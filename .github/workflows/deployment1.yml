@@ -1,5 +1,5 @@
 name: Deployment in one Job
-on: workflow_dispatch
+on: push
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -16,4 +16,3 @@ jobs:
         run: run npm build
       - name: Deploy code
         run: echo "Deploying ..."
-        
