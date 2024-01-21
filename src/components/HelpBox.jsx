@@ -19,3 +19,4 @@ HelpBox.propTypes = {
 export default HelpBox;
 
 // Test code
+// New test code
