@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - app/v1
+      - app/v2
 env:
   MONGODB_DB_NAME: gha-demo
 jobs:
