@@ -75,3 +75,10 @@ jobs:
         run: ls
       - name: Deploy
         run: echo "Deploying..."
+  report:
+    if: failure()
+    steps:
+      - name: Output information
+        run: |
+          echo "Something  went wrong"
+          echo "${{ github }}"
