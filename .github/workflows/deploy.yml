@@ -2,8 +2,7 @@ name: Deployment (Container)
 on:
   push:
     branches:
-      - main
-      - dev
+      - docker-workflow
 env:
   CACHE_KEY: node-deps
   MONGODB_DB_NAME: gha-demo
