@@ -13,8 +13,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Install eslint
-        run: npm install -g eslint
+      # - name: Install eslint
+      #   run: npm install -g eslint
       - name: Cache dependencies
         id: cache
         uses: actions/cache@v3
