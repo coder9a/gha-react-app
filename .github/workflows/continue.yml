@@ -1,6 +1,6 @@
 name: Continue Website Deployment
 on:
-  push:
+  workflow_dispatch:
     branches:
       - workflow-execution
 jobs:
