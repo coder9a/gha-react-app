@@ -42,9 +42,11 @@ jobs:
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
+      - name: Install Vitest
+        run: npm install -g vitest
       - name: Test code
         id: run-tests
-        run: npm run test
+        run: vitest run
       - name: Upload test report
         if: failure() && steps.run-tests.outcome == 'failure'
         uses: actions/upload-artifact@v3
