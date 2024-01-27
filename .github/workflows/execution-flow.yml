@@ -9,10 +9,6 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-      - name: Install NodeJS
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
       - name: Cache dependencies
         id: cache
         uses: actions/cache@v3
@@ -29,10 +25,6 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-      - name: Install NodeJS
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
       - name: Cache dependencies
         id: cache
         uses: actions/cache@v3
@@ -42,8 +34,8 @@ jobs:
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
-      - name: Install Vitest
-        run: npm install -g vitest
+        id: run-tests
+        run: npm run test
       - name: Test code
         id: run-tests
         run: vitest run
@@ -68,8 +60,6 @@ jobs:
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
-      - name: Install Vite
-        run: npm install -g vite
       - name: Build website
         id: build-website
         run: npm run build
